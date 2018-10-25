@@ -121,7 +121,7 @@ select {
 
 /*** DEFAULTS ***/
 html, body {
-  height: 100%; /* footer am unteren Bildschirm */
+  /* height: 100%; footer am unteren Bildschirm */
 }
 /** Farben **/
 body {
@@ -146,6 +146,11 @@ a {
 
 /*** LAYOUT ***/
 
+.content {
+  /* min-height für Platzierung footer am unteren Bildschirmrand */
+  min-height: calc(100vh - 15.5em); /* header 13 + footer 5 + margin */
+}
+
 header, footer, .wrapper {
   padding: var(--seitenrand-default);
 }
@@ -167,7 +172,7 @@ footer {
   padding-top: 1em;
   padding-left: var(--seitenrand-default);
   padding-right: var(--seitenrand-default);
-  flex-shrink: 0; /* footer am unteren Bildschirm */
+  /* flex-shrink: 0; footer am unteren Bildschirm */
 }
 
 /*** ENDE LAYOUT ***/
@@ -308,7 +313,10 @@ header {
   background: white;
 }
 .logo a img {
-  height: 100%;
+  height: 8em;
+}
+.fa-bars {
+  color: var(--kleist-blau);
 }
 
 @media screen and (max-width: 899px) {
@@ -325,7 +333,7 @@ header {
   .header-mobile {
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: top;
   }
   .header-mobile > .menu {
       margin-left: auto;
@@ -368,8 +376,60 @@ header {
   .navbar > ul > li > a {
       text-transform: uppercase;
   }
-  
   /* Navigation Ende */
 }
 
+/** Breadcrumbs **/
+.breadcrumb > ul {
+  display: flex;
+  margin-top: 1rem;
+  font-family: var(--font-sans);
+}
+.breadcrumb > ul > li {
+  margin-right: 1rem;
+  font-size: 90%;
+}
+/** Ende Breadcrumbs **/
+
 /*** ENDE NAVIGATION ***/
+
+
+
+/*** COMPONENTS ***/
+
+/** Card **/
+.container-cards {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  /* needed for the flex layout*/
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.205); */
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+  /* min-height: 100%; */
+  /* transition: all .1s ease-in; */
+}
+.card .media {
+  text-decoration: none;
+  color: #444;
+}
+.card .media img {
+  max-width: 200px;
+}
+.card:hover {
+  top: -2px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.301)
+}
+@media screen and (min-width: 900px) {
+  .container-cards {
+    flex-direction: row;
+  }
+  .card {
+    max-width: 16em;
+  }
+}
+/** Ende Card **/
+
+/*** ENDE COMPONENTS ***/

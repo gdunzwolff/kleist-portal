@@ -169,7 +169,6 @@ header, footer, .wrapper {
 }
 
 footer {
-  display: flex;
   background: white;
   min-height: 5em;
   margin-top: 1em;
@@ -178,7 +177,28 @@ footer {
   padding-right: var(--seitenrand-default);
   /* flex-shrink: 0; footer am unteren Bildschirm */
 }
-
+footer > .ft-wrapper {
+  width: 100%;
+}
+.ft-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.ft-part {
+  margin-bottom: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+@media screen and (min-width: 900px) {
+  .ft-wrapper {
+    flex-direction: row;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+  .ft-part {
+    width: 30%;
+  }
+}
 /*** ENDE LAYOUT ***/
 
 
@@ -202,6 +222,9 @@ header, footer {
 /** Ende Fontfamilien **/
 
 /** Fontgrößen **/
+.small {
+  font-size: 80%
+}
 body {
   font-size: 100%;
 }
@@ -346,6 +369,9 @@ header {
       margin-left: auto;
       margin-right: 5px;
       cursor: pointer;
+  }
+  .logo a img {
+    height: 6em;
   }
   /* Elemente verbergen */
   .text-navbars-desktop {

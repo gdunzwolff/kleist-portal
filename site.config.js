@@ -4,6 +4,6 @@ module.exports = {
     outputPath: './public'
   },
   site: {
-    title: 'Kleist-Portal 2019'
+    title: 'Kleistiana'
   }
 };

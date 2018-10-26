@@ -102,14 +102,17 @@ select {
 }
 /**/
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
+/* @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Crimson+Text'); */
 
 
 
 /*** VARIABLEN ***/
 :root {
-  --font-family-headline: 'Lato', sans-serif;
+  /* --font-family-headline: 'Lato', sans-serif;
   --font-family-body: 'Open Sans', sans-serif;
+  --font-family-body-serif: 'Crimson Text', serif; */
+  --font-family-sans-serif: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  --font-family-body-serif: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   --seitenrand-default: .3rem;
   /** Farben **/
   --font-color-default: #333333;
@@ -166,6 +169,7 @@ header, footer, .wrapper {
 }
 
 footer {
+  display: flex;
   background: white;
   min-height: 5em;
   margin-top: 1em;
@@ -183,14 +187,17 @@ footer {
 
 /** Fontfamilien **/
 body {
-  font-family: var(--font-family-body);
+  font-family: var(--font-family-body-serif);
   font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-headline);
+  font-family: var(--font-family-sans-serif);
   font-weight: 400;
   text-align: center;
   padding-bottom: .5em;
+}
+header, footer {
+  font-family: var(--font-family-sans-serif);
 }
 /** Ende Fontfamilien **/
 
@@ -404,19 +411,19 @@ header {
 }
 .card {
   /* needed for the flex layout*/
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.205); */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.205);
   margin-left: 5px;
   margin-right: 5px;
-  width: 100%;
+  max-width: 100%;
   /* min-height: 100%; */
-  /* transition: all .1s ease-in; */
+  transition: all .1s ease-in;
 }
 .card .media {
   text-decoration: none;
   color: #444;
 }
 .card .media img {
-  max-width: 200px;
+  width: 100%;
 }
 .card:hover {
   top: -2px;
@@ -425,9 +432,12 @@ header {
 @media screen and (min-width: 900px) {
   .container-cards {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .card {
-    max-width: 16em;
+    flex-grow: 1;
+    width: 32%;
+    max-width: 32%;
   }
 }
 /** Ende Card **/

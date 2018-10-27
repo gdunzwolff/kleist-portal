@@ -117,6 +117,7 @@ select {
   /** Farben **/
   --font-color-default: #333333;
   --kleist-blau:  rgba(44, 62, 105, 0.932);
+  --page-width-default: 50rem;
 }
 /*** ENDE VARIABLEN ***/
 
@@ -140,7 +141,10 @@ a {
   color: var(--kleist-blau);
 }
 .icon {
-  margin-right: .3rem;
+  /* margin-right: .3rem; */
+}
+.fa {
+  padding-right: .5rem;
 }
 .hidden {
   display: none;
@@ -166,8 +170,12 @@ header, footer, .wrapper {
 
 @media screen and (min-width: 900px) {
   .wrapper {
-    max-width: 50rem;
+    max-width: var(--page-width-default);
     margin: 0 auto;
+  }
+  .content {
+    /* min-height für Platzierung footer am unteren Bildschirmrand */
+    min-width: var(--page-width-default);
   }
 }
 
@@ -201,7 +209,7 @@ footer > .ft-wrapper {
   }
   .ft-wrapper {
     flex-direction: row;
-    max-width: 50rem;
+    max-width: var(--page-width-default);
     margin: 0 auto;
   }
   .ft-part {
@@ -388,6 +396,7 @@ header {
 }
 .card .media img {
   width: 100%;
+  padding-bottom: .5rem;
 }
 .card:hover {
   top: -2px;
@@ -411,8 +420,9 @@ header {
 
 
 
-/*** BUTTONS ***/
+/*** DIVERSE ELEMENTS / TEMPLATES ***/
 
+/** Buttons **/
 .hidden-show {
   padding-bottom: .5rem;
   padding-right: 1rem;
@@ -420,4 +430,66 @@ header {
   text-align: right;
 }
 
-/*** ENDE BUTTONS ***/
+/** Captions **/
+.caption {
+  display: block;
+  font-family: var(--font-family-sans-serif);
+  font-size: 90%;
+}
+
+/** Text mit Marginalienspalte **/
+.text-marginalien {
+  
+}
+@media screen and (min-width: 900px) {
+  .text-marginalien {
+    width: 100%;
+  }
+  .text-marginalien p {
+    padding-bottom: .5rem;
+  }
+  .image-left {
+    float: left;
+    width: 40%;
+    margin-right: 1rem;
+  }
+  .image-right {
+    float: right;
+    width: 40%;
+    margin-left: 1rem;
+  }
+  .text-marginalien blockquote {
+    font-size: 200%;
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+    width: 50%;
+    text-indent: -1.5rem;
+  }
+  .text-marginalien blockquote::before {
+    content: "> "
+  }
+}
+
+/*** ENDE ELEMENTS ***/
+
+
+
+/*** TEXTSORTEN ***/
+
+/** Chronik **/
+.chronic {
+  font-size: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 2rem;
+}
+.chronic p {
+  line-height: 1.3em;
+}
+@media screen and (min-width: 900px) {
+  .chronic {
+    padding-right: 25%;
+  }
+}
+
+/*** TEXTSORTEN ***/

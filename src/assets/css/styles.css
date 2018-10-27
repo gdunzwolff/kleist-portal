@@ -142,6 +142,9 @@ a {
 .icon {
   margin-right: .3rem;
 }
+.hidden {
+  display: none;
+}
 
 /*** DEFAULTS ENDE ***/
 
@@ -380,7 +383,8 @@ header {
 }
 .card .media {
   text-decoration: none;
-  color: #444;
+  color: var(--font-color-default);
+  margin-bottom: 1em;
 }
 .card .media img {
   width: 100%;
@@ -404,3 +408,16 @@ header {
 /** Ende Card **/
 
 /*** ENDE COMPONENTS ***/
+
+
+
+/*** BUTTONS ***/
+
+.hidden-show {
+  padding-bottom: .5rem;
+  padding-right: 1rem;
+  text-decoration: underline;
+  text-align: right;
+}
+
+/*** ENDE BUTTONS ***/

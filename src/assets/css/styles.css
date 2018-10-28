@@ -114,10 +114,11 @@ select {
   --font-family-sans-serif: "Trebuchet MS", Arial, Helvetica, sans-serif;
   --font-family-body-serif: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   --seitenrand-default: .3rem;
+  --page-width-default: 58rem;
   /** Farben **/
   --font-color-default: #333333;
   --kleist-blau:  rgba(44, 62, 105, 0.932);
-  --page-width-default: 50rem;
+  --bkg-color: #f8f8f8;
 }
 /*** ENDE VARIABLEN ***/
 
@@ -130,7 +131,7 @@ html, body {
 /** Farben **/
 body {
   color: var(--font-color-default);
-  background: #f8f8f8;
+  background: var(--bkg-color);
   display: flex; /* footer am unteren Bildschirm */
   flex-direction: column;
 }
@@ -191,9 +192,20 @@ footer {
 footer > .ft-wrapper {
   width: 100%;
 }
-.ft-wrapper {
+footer hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid var(--bkg-color);
+}
+.ft-intro {
+  font-size: 90%;
+  line-height: 1.3em;
+}
+.ft-container-parts {
   display: flex;
   flex-direction: column;
+}
+.ft-wrapper {
 }
 .ft-part {
   margin-bottom: 1rem;
@@ -208,9 +220,11 @@ footer > .ft-wrapper {
     margin: 0 auto;
   }
   .ft-wrapper {
-    flex-direction: row;
     max-width: var(--page-width-default);
     margin: 0 auto;
+  }
+  .ft-container-parts {
+    flex-direction: row;
   }
   .ft-part {
     width: 30%;
@@ -398,6 +412,9 @@ header {
   width: 100%;
   padding-bottom: .5rem;
 }
+.card p {
+  padding-bottom: .5em;
+}
 .card:hover {
   top: -2px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.301)
@@ -412,6 +429,10 @@ header {
     margin-right: 1rem;
     width: 31%;
     max-width: 32%;
+  }
+  .card-wide {
+    width: 65%;
+    max-width: 65%;
   }
 }
 /** Ende Card **/

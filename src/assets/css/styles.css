@@ -419,6 +419,9 @@ header {
   top: -2px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.301)
 }
+.card .m-footer {
+  text-align: center;
+}
 @media screen and (min-width: 900px) {
   .container-cards {
     flex-direction: row;
@@ -452,10 +455,14 @@ header {
 }
 
 /** Captions **/
-.caption {
+.img .caption {
   display: block;
   font-family: var(--font-family-sans-serif);
-  font-size: 90%;
+  text-align: center;
+  font-size: 70%;
+  line-height: 1em;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
 }
 
 /** Text mit Marginalienspalte **/
